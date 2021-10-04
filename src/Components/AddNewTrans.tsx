@@ -4,22 +4,27 @@ type Data = {
     amount:number
     incomeExpense:string
 }
-let initilState :Data = {
+let initialState :Data = {
     textValue:'',
     amount:0,
-    incomeExpense:''
+    incomeExpense:'',
+}
+type Props = {
+  sendData :(val:Data) => void;
 }
 
-const AddNewTrans = () => {
+const AddNewTrans = ({sendData}:Props) => {
 
-    let [data,setData] = useState(initilState)
-    let handleSubmit = () => {
-        console.log(data);
+    let [data,setData] = useState<Data>(initialState)
+    let handleSubmit = () =>  {
+        // console.log(data);
         setData(
-            initilState
+            initialState
         )
-    }
-
+        sendData(data);
+      
+      }
+      
   return (
     <div>
       <h3>Add New Transaction</h3>
@@ -29,13 +34,13 @@ const AddNewTrans = () => {
         <input type="text" value={data.textValue} onChange={(event) => setData({...data,textValue:event.target.value})}/>
         <div>
           <label htmlFor="income">Income</label>
-          <input type="radio" name="inEx" value="income" onClick={() => setData({...data,incomeExpense:"income"})} />
+          <input type="radio" name="inEx" value="income" checked={data.incomeExpense === 'income'} onClick={() => setData({...data,incomeExpense:"income"})} />
           <label htmlFor="income">Expense</label>
-          <input type="radio" name="inEx" value="expense" onClick={() => setData({...data,incomeExpense:"expense"})}/>
+          <input type="radio" name="inEx" value="expense" checked={data.incomeExpense ==='expense'} onClick={() => setData({...data,incomeExpense:"expense"})}/>
         </div>
 
         <label htmlFor="amount"> Amount</label>
-        <input type="number" value={data.amount} onChange={({target})=> setData({...data,amount:parseInt(target.value)})}/>
+        <input type="number" value={data.amount || ''} onChange={({target})=> setData({...data,amount:parseInt(target.value)})}/>
         <button onClick={handleSubmit}>Add Transaction</button>
       </div>
     </div>

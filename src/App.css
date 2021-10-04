@@ -1,19 +1,24 @@
 .App {
   text-align: center;
   margin: 0px auto;
-  max-width: 50%;
-  max-height: auto;
-  border: 1px solid red;
+  max-width: 30%;
+  background-color: lightcyan;
+  padding: 0px 0px;  
 }
 .Balance {
-  border: 1px solid yellow;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .parent-inex {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: rgb(255, 255, 241);
 }
 .trans-form {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,4 +31,15 @@
 .trans-form > button {
   height: 40px;
   margin-top: 10px;
+}
+.History {
+  display: flex;
+  border: 2px solid black;
+  
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  align-content: center;
+  justify-content: space-around;
+  
 }

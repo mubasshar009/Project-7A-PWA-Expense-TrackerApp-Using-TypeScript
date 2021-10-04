@@ -1,13 +1,12 @@
 import { useState } from "react";
 
-const Balance = () => {
-    let [balance,setBalance] = useState({
-        currentBalance:0
-    })
+const Balance = ({amount}:{amount:number}) => {
+    console.log("Amount",amount);
+    
     return(
       <div className="Balance">
-        <p>Your Balance</p>
-        <h1>{`$${balance.currentBalance}.00`}</h1>
+        <p style={{display:'flex',fontWeight:'bold'}}>Your Balance</p>
+        <h1 style={{display:'flex'}}>{`$${amount}.00`}</h1>
       </div>
     )
   }
