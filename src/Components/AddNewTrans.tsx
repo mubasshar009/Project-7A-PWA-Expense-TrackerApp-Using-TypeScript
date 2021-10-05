@@ -34,14 +34,14 @@ const AddNewTrans = ({sendData}:Props) => {
         <input type="text" value={data.textValue} onChange={(event) => setData({...data,textValue:event.target.value})}/>
         <div>
           <label htmlFor="income">Income</label>
-          <input type="radio" name="inEx" value="income" checked={data.incomeExpense === 'income'} onClick={() => setData({...data,incomeExpense:"income"})} />
+          <input type="radio" className="radio" name="inEx" value="income" checked={data.incomeExpense === 'income'} onClick={() => setData({...data,incomeExpense:"income"})} />
           <label htmlFor="income">Expense</label>
-          <input type="radio" name="inEx" value="expense" checked={data.incomeExpense ==='expense'} onClick={() => setData({...data,incomeExpense:"expense"})}/>
+          <input type="radio" className="radio" name="inEx" value="expense" checked={data.incomeExpense ==='expense'} onClick={() => setData({...data,incomeExpense:"expense"})}/>
         </div>
 
         <label htmlFor="amount"> Amount</label>
         <input type="number" value={data.amount || ''} onChange={({target})=> setData({...data,amount:parseInt(target.value)})}/>
-        <button onClick={handleSubmit}>Add Transaction</button>
+        <button onClick={handleSubmit}>Add Trans</button>
       </div>
     </div>
   );
