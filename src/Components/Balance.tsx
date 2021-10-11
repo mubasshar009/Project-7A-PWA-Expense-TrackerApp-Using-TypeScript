@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const Balance = ({amount}:{amount:number}) => {
-    console.log("Amount",amount);
     
     return(
       <div className="Balance">

@@ -5,7 +5,6 @@ type OProps = {
 };
 
 const History = ({ Data,handleFilter }: { Data: OProps[],handleFilter:(val:OProps)=>void }) => {
-  console.log("Arr", Data);
   return (
     <div>
       <h1>History</h1>
